@@ -5,7 +5,6 @@ void BST::insert(Dragon dragon)
     if (root == nullptr)
     {
         root = new BSTNode(dragon);
-        // cout << "root is " << root -> dragon.name << '\n';
     }
     else
     {
@@ -17,14 +16,11 @@ void BST::insert(Dragon dragon)
                 if (current->left == nullptr)
                 {
                     current->left = new BSTNode(dragon);
-
-                    // cout << "left is " << current -> left -> dragon.name << '\n';
                     break;
                 }
                 else
                 {
                     current = current->left;
-                    // cout << "current is " << current -> dragon.name << '\n';
                 }
             }
             else
@@ -32,13 +28,10 @@ void BST::insert(Dragon dragon)
                 if (current->right == nullptr)
                 {
                     current->right = new BSTNode(dragon);
-
-                    // cout << "right is " << current -> right -> dragon.name << '\n';
                     break;
                 }
                 else
                 {
-                    // cout << "iwantdie" << '\n';
                     current = current->right;
                 }
             }
@@ -72,13 +65,20 @@ BSTNode *BST::search(string name)
     return nullptr;
 }
 
-void BST::inOrderTraversal(BSTNode *root)
+string BST::inOrderTraversalHelper(BSTNode *current)
 {
-    BSTNode *current = root;
+    string traversal;
     if (current != nullptr)
     {
-        inOrderTraversal(current->left);
+        traversal += inOrderTraversalHelper(current->left);
         cout << current->dragon.name << '\n';
-        inOrderTraversal(current->right);
+        traversal += inOrderTraversalHelper(current->right);
     }
+    return traversal;
+}
+
+string BST::inOrderTraversal()
+{
+    inOrderTraversalHelper(root);
+    return "";
 }

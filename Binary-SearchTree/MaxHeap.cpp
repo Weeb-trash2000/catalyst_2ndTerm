@@ -42,7 +42,7 @@ void maxheap::insert(Dragon dragon)
     heapifyUp(dragons.size() - 1);
 };
 
-void maxheap::extractMax()
+Dragon maxheap::extractMax()
 {
     if (dragons.size() == 0)
     {
@@ -50,15 +50,11 @@ void maxheap::extractMax()
     }
     else
     {
-        cout << "biggest: " << dragons[0].name << " " << dragons[0].level << '\n';
+        Dragon max = dragons[0];
         dragons[0] = dragons[dragons.size() - 1];
         dragons.pop_back();
         heapifyDown(0);
-
-        for (int i = 0; i < dragons.size(); i++)
-        {
-            cout << dragons[i].name << " " << dragons[i].level << ", ";
-        }
-        cout << '\n';
+        return max;
     }
+    return dragons[0];
 }

@@ -2,28 +2,30 @@
 #define BST_HPP
 #include "dragon.hpp"
 
-class BSTNode
+struct BSTNode
 {
-public:
     Dragon dragon;
     BSTNode *left;
     BSTNode *right;
 
-    // BSTNode(Dragon dragon);
-
-    BSTNode(Dragon d) : dragon(d), left(nullptr), right(nullptr) {}
+    BSTNode(Dragon dragon) : dragon(dragon), left(nullptr), right(nullptr) {}
 };
 
 class BST
 {
 public:
-    BSTNode *root;
+    BST() : root(nullptr) {}
 
     void insert(Dragon dragon);
 
     BSTNode *search(string name);
 
-    void inOrderTraversal(BSTNode *root);
+    string inOrderTraversal();
+
+private:
+    BSTNode *root;
+
+    string inOrderTraversalHelper(BSTNode *node);
 };
 
 #endif // BST_HPP
