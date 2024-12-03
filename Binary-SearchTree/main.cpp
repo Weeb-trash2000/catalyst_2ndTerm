@@ -69,3 +69,40 @@ int main()
 
     return 0;
 }
+
+// #include "MaxHeap.hpp"
+// #include "BST.hpp"
+
+// int main() {
+//     maxheap dragonHeap;
+//     BST dragonBST;
+
+//     // Test data
+//     std::vector<Dragon> dragons = {
+//         {"Smaug", 100},
+//         {"Drogon", 90},
+//         {"Toothless", 80},
+//         {"Norbert", 70},
+//         {"Falkor", 60}
+//     };
+
+//     // Insert dragons into heap
+//     for (const auto& dragon : dragons) {
+//         dragonHeap.insert(dragon);
+//     }
+
+//     std::cout << "Extracting dragons from heap and inserting into BST...\n";
+//     while (true) {
+//         try {
+//             Dragon d = dragonHeap.extractMax();
+//             dragonBST.insert(d);
+//         } catch (const std::runtime_error&) {
+//             break;
+//         }
+//     }
+
+//     std::cout << "Dragons in alphabetical order:\n";
+//     dragonBST.inOrderTraversal();
+
+//     return 0;
+// }
