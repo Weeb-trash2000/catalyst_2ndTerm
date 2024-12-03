@@ -5,26 +5,26 @@
 using namespace std;
 
 
-void lenierSearch(int arr[], int n, int x)
+int lenierSearch(int arr[], int n, int x)
 {
     for (int i = 0; i < n; i++)
     {
         if (arr[i] == x)
         {
             cout << "element " << arr[i] << " found at index: " <<  i << '\n';
-            return;
+            return x;
         }
     }
 }
 
-void binarySearch(int arr[], int l, int r, int x){
+int binarySearch(int arr[], int l, int r, int x){
     if (r >= l)
     {
         int mid = l + (r - l) / 2;
         if (arr[mid] == x)
         {
             cout << "element " << x <<" found at index: " << mid << '\n';
-            return;
+            return x;
         }
         if (arr[mid] > x)
         {
@@ -39,5 +39,6 @@ void binarySearch(int arr[], int l, int r, int x){
     else
     {
         cout << "element not found" << '\n';
+        return -1;
     }
 }
