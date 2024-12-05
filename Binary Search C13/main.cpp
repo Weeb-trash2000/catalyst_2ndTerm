@@ -1,5 +1,5 @@
 #include "BinarySearch.cpp"
-#include <chrono>
+
 using namespace std;
 
 array<int, 10> num10 = {1,2,3,4,5,6,7,8,9,10};
@@ -11,7 +11,7 @@ array<int, 100> num100 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
                           73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,
                           91,92,93,94,95,96,97,98,99,100};
 
-array <int, 1000> num1000 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
+ array <int, 1000> num1000 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
                           20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,
                           37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,
                           55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,
@@ -87,13 +87,14 @@ int main(){
 
     
 
-    // binarySearch(num10.data(), 0, 10, 7);  
+    lenierSearch(num1000.data(), 1000, 700);
 
-    auto start = std::chrono::high_resolution_clock::now();
-    binarySearch(num10.data(), 0, 10, 5);
-     auto stop = std::chrono::high_resolution_clock::now();
-     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-     std::cout << "Time taken by function: " << duration.count() << " microseconds" << std::endl;
+    lenierSearch(num1000.data(), 1000, 700000);
+
+    
+  binarySearch(num1000.data(), 0, 1000, 600);
+
+  binarySearch(num1000.data(), 0, 1000, 60000);
 
 
 }
