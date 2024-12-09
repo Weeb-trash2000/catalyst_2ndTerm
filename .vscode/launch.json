@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": ".",
-      "program": "build/Debug/outDebug",
+      "cwd": "/workspaces/catalyst_2ndTerm/Greedy_and_Dijkstra's",
+      "program": "/workspaces/catalyst_2ndTerm/Greedy_and_Dijkstra's/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
